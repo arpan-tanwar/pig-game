@@ -30,6 +30,20 @@
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--rule">👾 How to play</button>
+
+      <div class="rule hidden">
+        <button class="close-rule">&times;</button>
+        <h1>Rules</h1>
+        <li class="rule--points">Keep generating a random dice roll.</li>
+        <li class="rule--points">Hold the score to add it to total score.</li>
+        <li class="rule--points">
+          If the dice roll is 1 or the player holds, the player switches.
+        </li>
+        <li class="rule--points">First to 100 points win.</li>
+        <li class="rule--points">Press new game to play again!</li>
+      </div>
+      <div class="overlay hidden"></div>
     </main>
     <script src="script.js"></script>
   </body>
