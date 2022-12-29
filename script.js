@@ -11,6 +11,10 @@ const diceEl = document.querySelector(".dice");
 const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
+const btnRule = document.querySelector(".btn--rule");
+const btnCloseRule = document.querySelector(".close-rule");
+const rule = document.querySelector(".rule");
+const overlay = document.querySelector(".overlay");
 
 let scores, currentScore, activePlayer, playing;
 
@@ -40,6 +44,16 @@ const switchPlayer = function () {
   activePlayer = activePlayer === 0 ? 1 : 0;
   player0El.classList.toggle("player--active");
   player1El.classList.toggle("player--active");
+};
+
+const openRule = function () {
+  rule.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeRule = function () {
+  rule.classList.add("hidden");
+  overlay.classList.add("hidden");
 };
 
 // Rolling dice functionality
@@ -90,3 +104,6 @@ btnHold.addEventListener("click", function () {
 });
 
 btnNew.addEventListener("click", init);
+btnRule.addEventListener("click", openRule);
+btnCloseRule.addEventListener("click", closeRule);
+overlay.addEventListener("click", closeRule);
